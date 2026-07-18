@@ -24,6 +24,13 @@ import com.example.ui.theme.MyApplicationTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        try {
+            val jsDir = java.io.File(cacheDir, "WebView/Default/HTTP Cache/Code Cache/js")
+            val wasmDir = java.io.File(cacheDir, "WebView/Default/HTTP Cache/Code Cache/wasm")
+            if (!jsDir.exists()) jsDir.mkdirs()
+            if (!wasmDir.exists()) wasmDir.mkdirs()
+        } catch (e: Exception) {}
+        
         enableEdgeToEdge()
         MobileAds.initialize(this) {}
         AdManager.loadInterstitialAd(this)

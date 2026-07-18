@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ScanFlow AI</string>
+    <string name="empty_attribution"></string>
 </resources>
